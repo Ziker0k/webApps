@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="webapps/css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="~{blocks/header :: header}"></header>
+<main class="container mt-3">
+    <div class = "container" th:if="${delivery == null}">
+        <h6>Ваш заказ находится на рассмотрении</h6>
+    </div>
+
+    <div class="container" th:if="${delivery != null}"  th:each="el : ${delivery}">
+        <h4 th:text="${el.getOrderDel().getFullnameCustomer}"></h4>
+        <h4>Ваш заказ с трек номером:</h4>
+        <h3 th:text="${el.trackNumber}"></h3>
+        <h3 th:if="${el.getOrderDel().getExecutionStage == 'INPROGRESS'}">Принят в работу!</h3>
+        <h3 th:if="${el.getOrderDel().getExecutionStage != 'INPROGRESS'}">Доставлен!</h3>
+        <p>Цена:</p>
+        <p th:text="${el.priceOrder}"></p>
+        <p>Примерное время доставки:</p>
+        <p th:text="${el.timeExpected}"></p>
+
+        <p th:if="${el.timeDelivery != null}">Время прибытия</p>
+        <p th:text="${el.timeDelivery}"></p>
+    </div>
+</main>
+<footer th:insert="~{blocks/footer :: footer}"></footer>
+</body>
+</html>
