@@ -1,5 +1,5 @@
-# webApps.   
-1 - Project BUYSLONE.  
+# webApps   
+##1 - Project BUYSLONE  
 Торговая площадка с регистрацией и админ панелью.  
 Присутствует шифрование паролей с занесением в БД.  
 JAVA + MySQL.  
@@ -8,7 +8,7 @@ Spring Framework, Hibernate, Maven.
 ![alt text](ProjectBUYSLONE/6.png).  
   
   
-2 - Project LOGCOM
+##2 - Project LOGCOM  
 Сервис доставки грузов с расчетом стоимости доставки.  
 JAVA + MySQL
 Frameworks and libraries:  
