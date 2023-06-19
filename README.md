@@ -6,3 +6,12 @@ JAVA + MySQL.
 Frameworks and libraries:  
 Spring Framework, Hibernate, Maven.  
 ![alt text](ProjectBUYSLONE/6.png).  
+  
+  
+2 - Project LOGCOM
+Сервис доставки грузов с расчетом стоимости доставки.  
+JAVA + MySQL
+Frameworks and libraries:  
+Spring Framework, Hibernate, Maven.  
+![alt text](ProjectLOGCOM/1.png).  
+![alt text](ProjectLOGCOM/2.png).  
