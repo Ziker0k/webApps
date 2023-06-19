@@ -5,4 +5,4 @@
 JAVA + MySQL.  
 Frameworks and libraries:  
 Spring Framework, Hibernate, Maven.  
-![alt text](6.png).  
+![alt text](ProjectBUYSLONE/6.png).  
