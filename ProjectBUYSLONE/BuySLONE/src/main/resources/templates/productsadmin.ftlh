@@ -1,0 +1,42 @@
+<#import "blocks/template.ftlh" as t>
+<@t.template user>
+    <h3 style="text-align: center">Поиск товаров</h3><hr>
+    <form method="get" action="/admin/products">
+        <div class="form-row">
+            <div class="form-group w-100">
+                <label for="searchWord">Поиск по объявлениям</label>
+                <input type="text" name="searchWord" <#if searchWord??>value="${searchWord}"</#if> class="form-control"
+                       id="searchWord">
+            </div>
+            <button style="width: 100%" type="submit" class="btn btn-search">Поиск</button>
+        </div>
+    </form>
+    <hr>
+    <div class="card-columns">
+        <#list products as product>
+            <a href="/product/${product.id}" class="product-link">
+                <div class="card text-white bg-dark my-3 product">
+                    <div class="card-top">
+                        <form action="/admin/product/delete/${product.id}" method="post">
+                            <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+                            <button type="submit" class="btn btn-danger m-3">
+                                Удалить
+                            </button>
+                        </form>
+                    </div>
+                    <img src="/images/${product.previewImageId}"
+                         class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">${product.title}</h5>
+                        <p class="card-text">${product.price} ₽</p>
+                    </div>
+                    <div class="card-footer">
+                        ${product.city}
+                    </div>
+                </div>
+            </a>
+        <#else>
+            <h3 style="text-align: center">Не найдено</h3>
+        </#list>
+    </div>
+</@t.template>
