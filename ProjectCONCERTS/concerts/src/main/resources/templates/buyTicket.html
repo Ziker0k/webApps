@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <title>CONCERTS.RU</title>
+</head>
+<body>
+<div class="wrapper">
+    <header class="header">
+        <p>
+            CONCERTS.RU
+        </p>
+    </header>
+</div>
+<div class="main">
+    <div class="leftcolumn">
+        <div class="buttons" >
+            <a action = "#" class="button17" tabindex="0" id="all-tickets">Показать все билеты</a>
+            <p></p>
+            <a class="button17" tabindex="0" id="rock">РОК</a>
+            <p></p>
+            <a class="button17" tabindex="0" id = "rap" >Рэп</a>
+            <p></p>
+            <a class="button17" tabindex="0" id = "classic" >Классическая музыка</a>
+
+
+
+        </div>
+    </div>
+
+    <div class="d1" id="product-form">
+        <form action="/" method="get">
+            <input name="nameBand"  type="text">
+            <button type="submit" id = "search-ticket"> Поиск </button>
+        </form>
+        <div class="product" id="tickets">
+            <div class = "tickets" th:each = "ticket : ${tickets}">
+                <a href = "#zatemnenie" th:text = "${ticket[0]}">Группа: </a>
+                <p th:text = "${ticket[8]}">Участники: </p>
+                <p th:text = "${ticket[2]}">Жанр: </p>
+                <p th:text = "${ticket[4]}">Дата: </p>
+                <p th:text = "${ticket[3]}">Адрес: </p>
+                <p th:text = "${ticket[1]}">Цена: </p>
+                <img th:src = "@{${ticket[6]}}" width="200" height="200" >
+                <div id="zatemnenie">
+                    <div id="okno">
+                        <p th:text = "${ticket[0]}">Группа: </p>
+                        <p th:text = "${ticket[8]}">Участники: </p>
+                        <p th:text = "${ticket[2]}">Жанр: </p>
+                        <p th:text = "${ticket[4]}">Дата: </p>
+                        <p th:text = "${ticket[3]}">Адрес: </p>
+                        <p th:text = "${ticket[1]}">Цена: </p>
+                        <img th:src = "@{${ticket[6]}}" width="200" height="200" >
+                        <a href="#" class="close">Закрыть окно</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="end">
+
+    </div>
+</footer>
+
+</body>
+
+
+</html>

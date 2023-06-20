@@ -1,0 +1,51 @@
+.zatemnenie {
+    background: rgba(102, 102, 102, 0.5);
+    width: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    display: block;
+}
+#Broklyn {
+    display: block;
+}
+.okno {
+    width: 50vw;
+    height: auto;
+    text-align: center;
+    border: 3px solid forestgreen;
+    border-radius: 10px;
+    color: black;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+}
+.zatemnenie:target {display: block}
+#close {
+    display: inline-block;
+    border: 1px solid darkgreen;
+    color: darkgreen;
+    padding: 0 12px;
+    margin: 10px;
+    text-decoration: none;
+    background: #f2f2f2;
+    font-size: 14pt;
+    cursor:pointer;
+}
+#close:hover {background: #e6e6ff;}
+.buttonn{
+    display: inline-block;
+    border: 1px solid darkgreen;
+    color: darkgreen;
+    padding: 0 12px;
+    margin: 10px;
+    text-decoration: none;
+    background: #f2f2f2;
+    font-size: 14pt;
+    cursor:pointer;
+}
+.buttonn:hover{
+    background: #e6e6ff;
+}
