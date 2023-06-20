@@ -22,4 +22,4 @@ Spring Framework, Hibernate, Maven
 JAVA + MySQL
 Frameworks and libraries:  
 Spring Framework, Hibernate, Maven  
-![alt text](ProjectСONCERTS/1.png)  
+![alt text](ProjectCONCERTS/1.png)  
